@@ -27,3 +27,14 @@ go test ./...
 ```
 > Functional tests included in the [tests](/tests) directory
 
+
+# How to interact
+
+After running the application the API should be reachable as following:
+```
+http://localhost:8000/v1/weather?lat=37.7739&lon=-122.4313
+```
+Or with curl
+```
+curl 'http://localhost:8000/v1/weather?lat=37.7739&lon=-122.4313'
+```
