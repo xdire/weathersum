@@ -25,10 +25,16 @@ func (sf *Simplified) AddPeriod(sp SimplifiedPeriod) {
 func (sf *Simplified) AsString() string {
 	out := strings.Builder{}
 	itemCount := 0
+	joinStatement := "and"
 	for _, p := range sf.periods {
+		// Add separator between forecast state variations and change join statement
+		if itemCount > 0 {
+			out.WriteString(", ")
+			joinStatement = "with"
+		}
 		out.WriteString(
 			fmt.Sprintf(
-				"%s %s and %s", periodKindToPhrase(p), periodTempToPhrase(p, itemCount > 0), p.shortDesc))
+				"%s %s %s %s", periodKindToPhrase(p), periodTempToPhrase(p, itemCount > 0), joinStatement, p.shortDesc))
 		itemCount++
 	}
 	return out.String()
