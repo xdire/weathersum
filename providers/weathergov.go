@@ -12,7 +12,7 @@ import (
 const (
 	wgovPeriodToday         string = "today"
 	wgovPeriodThisAfternoon string = "this afternoon"
-	wgovPeriodTonight       string = "tonight"
+	wgovPeriodTonight       string = "night"
 )
 
 type WeatherGov struct {
